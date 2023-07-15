@@ -1,0 +1,443 @@
+@import 'fonts.scss';
+
+// =====================mixins=====================
+
+@mixin heading ($title-color, $subtitlke-color, $subtitle-margin, $subtitle-padding) {
+    .section-title {
+        text-align: center;
+        font-family: 'HelveticaNeueProLt', sans-serif;
+        font-size: 34px;
+        font-weight: 400;
+        color: $title-color;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        margin: $subtitle-margin;
+        font-family: 'Merriweather', serif;
+        font-size: 16px;
+        line-height: 26px;
+        font-weight: 300;
+        font-style: italic;
+        padding-left: $subtitle-padding;
+        color: $subtitlke-color;
+    }
+    
+}
+
+@mixin card ($width, $height) {
+    width: $width;
+    height: $height;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+@mixin form-ctrl ($height) {
+    width: 100%;
+    height: $height;
+    border: 1px solid #999999;
+}
+
+// =====================reset=====================
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+
+
+body {
+    overflow-x: hidden;
+    min-width: 100%;
+}
+
+
+img {
+	border: 0;
+	vertical-align: top;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a[href^=tel] {
+	text-decoration: inherit;
+	color: inherit;
+}
+
+ul,
+ol,
+li {
+	list-style: none;
+}
+
+button, a {
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+// =====================header=====================
+
+.header {
+    color: #989696;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 17px;
+    text-transform: capitalize;
+    height: 54px;
+
+    .header-container {
+        max-width: 641px;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
+    .logo_header-pos {
+        margin: 0 59px;
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__item:nth-child(2),
+    &__item:nth-child(6) {
+        margin: 0 43px;
+    }
+
+    &__item:hover {
+        color: #010101;
+    }
+}
+
+// =====================hero=====================
+
+.hero {
+    padding: 206px 0;
+
+    .hero-container {
+        max-width: 621px;
+        padding: 0 90px 0 67px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__title {
+        color: #1d1e1f;
+        font-family: 'HelveticaNeueProLt', sans-serif;
+        font-size: 44px;
+        font-weight: 400;
+    }
+
+    &__subtitle {
+        color: #898888;
+        font-family: "Merriweather", serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 17px;
+        letter-spacing: 0.03em;
+        font-style: italic;
+        padding-bottom: 43px;
+    }
+
+    &__btn {
+        margin: 0 auto;
+        background-color: transparent;       
+        color: #000000;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        line-height: 17px;
+        font-weight: 400;
+        text-align: center;
+        text-transform: uppercase;
+        width: 188px;
+        height: 57px;
+        border: 1px solid #000000;
+    }
+
+    &__btn:hover {
+        box-shadow: 0px 0px 20px #00000044;
+    }
+}
+
+// =====================about us=====================
+
+.about-us {
+    background-color: #1d1d1d;
+    padding: 128px 0 271px 0;
+    background-image: url('../../images/about_us_bg.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    .about-us-container {
+        max-width: 1032px;
+        padding: 0 10px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 178px;
+        flex-wrap: wrap;
+    }
+}
+
+.about-us-card {
+    background-color: #181818;
+    height: 276px;
+    max-width: 417px;
+    width: 100%;
+    padding: 64px 12px 10px 12px;
+
+    &__title {
+        color: #fefefe;
+        text-align: center;
+        font-family: 'HelveticaNeuePro', sans-serif;
+        font-size: 48px;
+        font-weight: 400;
+        padding-bottom: 27px;
+    }
+
+    &__text {
+        color: #b7b7b7;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+    }       
+}
+
+// =========team and services shared styles=========
+
+.cards-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+// =====================team=====================
+
+.team {
+    .cards-container {
+        max-width: 1035px;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
+    @include heading(#1d1e1f, #898888, 12px 0 131px 0, 14px);
+
+    padding: 138px 0 149px 0;
+    background-color: #FFFFFF;
+}
+
+.card-team {
+    @include card (212px, 278px);
+
+    &__img {
+        padding: 1px;
+    }
+
+    &__content {
+        text-align: center;
+        margin: 25px 0 21px 0;
+    }
+
+    &__title {           
+        font-size: 24px;            
+        color: #464646;
+    }
+
+    &__title,
+    &__text {
+        font-family: 'HelveticaNeuePro', sans-serif;
+        line-height: 26px;
+        font-weight: 400;
+    }
+
+    &__text {
+        font-size: 13px;
+        color: #b3b3b3;
+        padding: 7px 0 21px 0;
+    }
+
+    .card__icons {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+    }
+}
+
+// =====================services=====================
+
+.services {
+    .cards-container {
+        max-width: 1196px;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
+    @include heading(#ffffff, #777777, 5px 0 138px 0, 0);
+
+    padding: 176px 0 155px 0;
+    background-color: #181818;
+}
+
+.card-services {
+    @include card (340px, 332px);
+
+    &__img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 172px;
+        width: 172px;
+        border-radius: 50%;
+        border: 6px solid #ffffff;
+        flex-shrink: 0;
+    }
+
+    &__content {
+        text-align: center;
+        padding: 42px 0 0 0;
+    }
+
+    &__title {           
+        font-family: 'HelveticaNeueProLt', serif;
+        font-size: 26px;
+        font-weight: 400;
+        color: #ffffff;
+        line-height: 26px;
+    }
+
+    &__text {
+        font-family: 'HelveticaNeueProLt', serif;
+        font-size: 18px;           
+        font-weight: 400;
+        color: #383838;
+        padding: 31px 0 0 0;
+    }
+}
+
+// =====================contact us=====================
+
+.contact-us {
+    .contact-us-container {
+        max-width: 790px;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
+    padding: 95px 0 121px 0;
+    background-color: #FFFFFF;
+
+    @include heading(#1d1e1f, #898888, 12px 0 64px 0, 0);
+
+    .contact-form_pos {
+        margin-bottom: 125px;
+    }
+}
+
+.contact-cards {
+    padding: 64px 0 153px 0;
+    display: flex;
+    justify-content: center;
+    gap: 97px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    width: 128px;
+
+    &__text {
+        font-family: 'HelveticaNeueProLt', sans-serif;
+        font-size: 12px;
+        line-height: 26px;
+        font-weight: 400;
+        color: #898888;
+    }
+}
+
+.form-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__txt-area {
+        @include form-ctrl(192px);
+        resize: none;
+    }
+
+    &__txt-area::placeholder,
+    &__txt-area {
+        padding: 22px 0 0 22px;
+    }
+}
+
+.input {
+    @include form-ctrl(52px);
+}
+
+.input:focus,
+.form-controls__txt-area:focus {
+    outline: 1px solid #999999;
+}
+
+.input::placeholder {
+    text-align: center;
+}
+
+.input::placeholder,
+.form-controls__txt-area::placeholder,
+.input,
+.form-controls__txt-area {
+    font-family: 'HelveticaNeueProLt', sans-serif;
+    font-size: 15px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #898888;
+}
+
+.btn-submit {
+    width: 100%;
+    height: 52px;
+    background-color: #161616;
+    font-family: 'HelveticaNeueProMd', sans-serif;
+    font-size: 17px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #fefefe;
+}
+
+footer {
+    font-family: 'HelveticaNeuePro', sans-serif;
+    color: #3b3b3b;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    padding: 29px 0;
+
+    .footer-container {
+        max-width: 311px;
+        margin: 0 auto;
+    }
+}
