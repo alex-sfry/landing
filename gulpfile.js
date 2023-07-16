@@ -174,6 +174,7 @@ export const scripts = async () => {
         sourcemap: true,
         plugins: [terser()]
     });
+    browserSync.reload();
 };
 
 export const img = () => {
