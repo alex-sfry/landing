@@ -33,7 +33,7 @@ import gulpPug from 'gulp-pug';
 
 const paths = {
     browserSync: {
-        base: './docs/'
+        base: 'docs/'
     },
     del: {
         base: 'docs/*',
@@ -44,7 +44,6 @@ const paths = {
         dest: 'docs/'
     },
     pug: {
-        srcWatch: 'src/*.pug',
         src: 'src/*.pug',
         dest: 'docs/'
     },
@@ -198,14 +197,13 @@ export const watch = () => {
     });
 
     gulp.watch(paths.html.src, HTML);
-    gulp.watch(paths.pug.srcWatch, pug);
+    gulp.watch(paths.pug.src, pug);
     gulp.watch(paths.scripts.srcWatch, scripts);
     gulp.watch(paths.styles.src, styles);
     gulp.watch(paths.css.src, css);
     gulp.watch(paths.vendorStyles.src, vendorStyles);
     gulp.watch(paths.vendorJS.src, vendorJS);
     gulp.watch(paths.images.src, img);
-    gulp.watch(paths.scripts.dest, browserSync.reload);
     folderSize();
 };
 
