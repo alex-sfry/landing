@@ -1,0 +1,22 @@
+/*
+Theme Name: Black and White Theme
+Theme URI: https://github.com/alex-sfry/landing
+Author: AlexT
+Author URI: https://github.com/alex-sfry
+Description: Black and White Wordpress theme
+Requires at least: 5.9
+Tested up to: 6.2
+Requires PHP: 5.6
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwentytwo
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, accessibility-ready
+
+Twenty Twenty-Two WordPress Theme, (C) 2021 WordPress.org
+Twenty Twenty-Two is distributed under the terms of the GNU GPL.
+*/
+
+.custom-logo {
+    max-height: 55px;
+}
