@@ -1,2 +1,4 @@
 # landing
-landing for wordpress
+landing on wordpress
+
+landing, натянутый на Wordpress
