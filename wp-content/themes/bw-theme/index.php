@@ -26,48 +26,72 @@
     </section>
     <section id="team" class="team">
         <div class="cards-container">
-            <h3 class="section-title">This is our team</h3>
-            <p class="section-subtitle">We are small but effective and ...</p>
+            <h3 class="section-title"><?= CFS()->get('team_title'); ?></h3>
+            <p class="section-subtitle"><?= CFS()->get('team_description'); ?></p>
             <ul class="cards-list">
-                <li class="card-team">
-                    <div class="card-team__img">
-                        <img src="<?php bloginfo('template_url') ?>/assets/images/mark_3197.png" alt="Mark Once photo" width="170" height="170">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <?php
+                        $loop = CFS()->get('team_card');
+                        $n = 0;
+                        foreach ($loop as $row) {
+                        ?>
+                        <div class="swiper-slide swiper-slide_centered">
+                            <li class="card-team">
+                                <div class="card-team__img">
+                                    <img src="<?= $row['team_image']; ?>" width="170" height="170">
+                                </div>
+                                <div class="card-team__content">
+                                    <h4 class="card-team__title"><?= $row['team_name']; ?></h4>
+                                    <p class="card-team__text"><?= $row['team_position']; ?></p>
+                                </div>
+                                <div class="card-team__icons">
+                                    <?php
+                                    if ($row['team_twitter']['url']) {
+                                    ?>
+                                        <a href="<?= $row['team_twitter']['url']; ?>">
+                                            <img src="<?= $row['icon1']; ?>" alt="<?= CFS()->get('alt_img1'); ?>">
+                                        </a>
+                                    <?php
+                                    }
+                                    ?>
+                                    <?php
+                                    if ($row['team_instagram']['url']) {
+                                    ?>
+                                        <a href="<?= $row['team_instagram']['url']; ?>">
+                                            <img src="<?= $row['icon2']; ?>" alt="<?= CFS()->get('alt_img2'); ?>">
+                                        </a>
+                                    <?php
+                                    }
+                                    ?>
+                                    <?php
+                                    if ($row['team_vk']['url']) {
+                                    ?>
+                                        <a href="<?= $row['team_vk']['url'] ?>">
+                                            <img src="<?= $row['icon3']; ?>" alt="<?= CFS()->get('alt_img3'); ?>">
+                                        </a>
+                                    <?php
+                                    }
+                                    ?>
+                                    <?php
+                                    if ($row['team_facebook']['url']) {
+                                    ?>
+                                        <a href="<?= $row['team_facebook']['url']; ?>">
+                                            <img src="<?= $row['icon4']; ?>" alt="<?= CFS()->get('alt_img4'); ?>">
+                                        </a>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                            </li>
+                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
-                    <div class="card-team__content">
-                        <h4 class="card-team__title">Mark Once</h4>
-                        <p class="card-team__text">Designer & Front-End Developer</p>
-                    </div>
-                    <div class="card-team__icons">
-                        <img src="<?php bloginfo('template_url') ?>/assets/images/twitter.svg" alt="twitter">
-                        <img src="<?php bloginfo('template_url') ?>/assets/images/instagram.svg" alt="instagram">
-                    </div>
-                </li>
-                <li class="card-team">
-                    <div class="card-team__img">
-                        <img src="<?php bloginfo('template_url') ?>/assets/images/justin_3478.png" alt="Justin Twice photo" width="170" height="170">
-                    </div>
-                    <div class="card-team__content">
-                        <h4 class="card-team__title">Justin Twice</h4>
-                        <p class="card-team__text">Founder & CEO</p>
-                    </div>
-                    <div class="card-team__icons">
-                        <img src="<?php bloginfo('template_url') ?>/assets/images/twitter.svg" alt="twitter">
-                        <img src="<?php bloginfo('template_url') ?>/assets/images/instagram.svg" alt="instagram">
-                    </div>
-                </li>
-                <li class="card-team">
-                    <div class="card-team__img">
-                        <img src="<?php bloginfo('template_url') ?>/assets/images/antonio_3479.png" alt="Antonio Never photo" width="170" height="170">
-                    </div>
-                    <div class="card-team__content">
-                        <h4 class="card-team__title">Antonio Never</h4>
-                        <p class="card-team__text">Someone & Somewhere</p>
-                    </div>
-                    <div class="card-team__icons">
-                        <img src="<?php bloginfo('template_url') ?>/assets/images/twitter.svg" alt="twitter">
-                        <img src="<?php bloginfo('template_url') ?>/assets/images/instagram.svg" alt="instagram">
-                    </div>
-                </li>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
             </ul>
         </div>
     </section>

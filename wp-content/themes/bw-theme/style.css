@@ -17,6 +17,23 @@ Twenty Twenty-Two WordPress Theme, (C) 2021 WordPress.org
 Twenty Twenty-Two is distributed under the terms of the GNU GPL.
 */
 
+/* max logo height*/
 .custom-logo {
     max-height: 55px;
+}
+
+/* card positioning inside slide */
+.card-team {
+    margin: 0 auto;
+    height: 100%;
+}
+
+/* when slides qty is 3 or less */
+.swiper {
+    width: 100%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #000000;
 }
