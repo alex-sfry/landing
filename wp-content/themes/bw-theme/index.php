@@ -33,7 +33,6 @@
                     <div class="swiper-wrapper">
                         <?php
                         $loop = CFS()->get('team_card');
-                        $n = 0;
                         foreach ($loop as $row) {
                         ?>
                         <div class="swiper-slide swiper-slide_centered">
@@ -97,44 +96,25 @@
     </section>
     <section id="services" class="services">
         <div class="cards-container">
-            <h3 class="section-title">We provide you everything</h3>
-            <p class="section-subtitle">
-                Maybe not everything, but we provide you some stuff.
-            </p>
+            <h3 class="section-title"><?= CFS()->get('services_title'); ?></h3>
+            <p class="section-subtitle"><?= CFS()->get('services_description'); ?></p>
             <ul class="cards-list">
+            <?php
+            $loop = CFS()->get('services_cards');
+            foreach ($loop as $row) {
+            ?>
                 <li class="card-services">
                     <div class="card-services__img">
-                        <img src="<?php bloginfo('template_url') ?>/assets/images/line_graph.svg" alt="line graph icon" width="64" height="54">
+                        <img src="<?= $row['services_card_image']; ?>" alt="<?= $row['alt_img']; ?>" width="64" height="54">
                     </div>
                     <div class="card-services__content">
-                        <h4 class="card-services__title">Some Analytics</h4>
-                        <p class="card-services__text">
-                            Aenean nisi lectus, convallis non lorem sit amet, rhoncus malesuada justo
-                        </p>
+                        <h4 class="card-services__title"><?= $row['services_card_title']; ?></h4>
+                        <p class="card-services__text"><?= $row['services_card_description']; ?></p>
                     </div>
                 </li>
-                <li class="card-services">
-                    <div class="card-services__img">
-                        <img src="<?php bloginfo('template_url') ?>/assets/images/heart.svg" alt="heart icon" width="73" height="63">
-                    </div>
-                    <div class="card-services__content">
-                        <h4 class="card-services__title">We provide you love</h4>
-                        <p class="card-services__text">
-                            Aenean nisi lectus, convallis non lorem sit amet, rhoncus malesuada justo
-                        </p>
-                    </div>
-                </li>
-                <li class="card-services">
-                    <div class="card-services__img">
-                        <img src="<?php bloginfo('template_url') ?>/assets/images/upload.svg" alt="upload icon" width="64" height="55">
-                    </div>
-                    <div class="card-services__content">
-                        <h4 class="card-services__title">And Some Cloud</h4>
-                        <p class="card-services__text">
-                            Aenean nisi lectus, convallis non lorem sit amet, rhoncus malesuada justo
-                        </p>
-                    </div>
-                </li>
+            <?php
+            }
+            ?>
             </ul>
         </div>
     </section>
