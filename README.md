@@ -1,5 +1,5 @@
 # landing
-<br><br>
+<br>
 https://bw-landing.tochilin.su/
 <br><br>
 <i><b>landing, натянутый на Wordpress</b></i><br><br>
@@ -11,7 +11,9 @@ branch 'main' - wordpress theme<br>
 branch 'master' - html/css/js w/o wordpress<br>
 <br>
 Plugins used: <br>
-- Custom Field Suite (similar to ACF, but 100% free with less features)
-- Contact Form 7<br><br>
+- Custom Field Suite (similar to ACF, but 100% free with less features)<br>
+- Contact Form 7<br>
+- ConveyThis<br>
+
 
 
