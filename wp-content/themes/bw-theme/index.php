@@ -28,70 +28,98 @@
         <div class="cards-container">
             <h3 class="section-title"><?= CFS()->get('team_title'); ?></h3>
             <p class="section-subtitle"><?= CFS()->get('team_description'); ?></p>
-            <ul class="cards-list">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <?php
-                        $loop = CFS()->get('team_card');
-                        foreach ($loop as $row) {
-                        ?>
-                            <div class="swiper-slide swiper-slide_centered">
-                                <li class="card-team">
-                                    <div class="card-team__img">
-                                        <img src="<?= $row['team_image']; ?>" width="170" height="170">
-                                    </div>
-                                    <div class="card-team__content">
-                                        <h4 class="card-team__title"><?= $row['team_name']; ?></h4>
-                                        <p class="card-team__text"><?= $row['team_position']; ?></p>
-                                    </div>
-                                    <div class="card-team__icons">
-                                        <?php
-                                        if ($row['team_twitter']['url']) {
-                                        ?>
-                                            <a href="<?= $row['team_twitter']['url']; ?>">
-                                                <img src="<?= $row['icon1']; ?>" alt="<?= CFS()->get('alt_img1'); ?>">
-                                            </a>
-                                        <?php
-                                        }
-                                        ?>
-                                        <?php
-                                        if ($row['team_instagram']['url']) {
-                                        ?>
-                                            <a href="<?= $row['team_instagram']['url']; ?>">
-                                                <img src="<?= $row['icon2']; ?>" alt="<?= CFS()->get('alt_img2'); ?>">
-                                            </a>
-                                        <?php
-                                        }
-                                        ?>
-                                        <?php
-                                        if ($row['team_vk']['url']) {
-                                        ?>
-                                            <a href="<?= $row['team_vk']['url'] ?>">
-                                                <img src="<?= $row['icon3']; ?>" alt="<?= CFS()->get('alt_img3'); ?>">
-                                            </a>
-                                        <?php
-                                        }
-                                        ?>
-                                        <?php
-                                        if ($row['team_facebook']['url']) {
-                                        ?>
-                                            <a href="<?= $row['team_facebook']['url']; ?>">
-                                                <img src="<?= $row['icon4']; ?>" alt="<?= CFS()->get('alt_img4'); ?>">
-                                            </a>
-                                        <?php
-                                        }
-                                        ?>
-                                    </div>
-                                </li>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <?php
+                    $loop = CFS()->get('team_card');
+                    foreach ($loop as $row) {
+                    ?>
+                        <div class="swiper-slide swiper-slide_centered">
+                            <div class="card-team">
+                                <div class="card-team__img">
+                                    <img 
+                                        src="<?= $row['team_image']; ?>" 
+                                        width="170" 
+                                        height="170" 
+                                        alt="photo"
+                                        loading="lazy"
+                                    >
+                                </div>
+                                <div class="card-team__content">
+                                    <h4 class="card-team__title"><?= $row['team_name']; ?></h4>
+                                    <p class="card-team__text"><?= $row['team_position']; ?></p>
+                                </div>
+                                <div class="card-team__icons">
+                                    <?php
+                                    if ($row['team_twitter']['url']) {
+                                    ?>
+                                        <a href="<?= $row['team_twitter']['url']; ?>">
+                                            <img 
+                                                src="<?= $row['icon1']; ?>"
+                                                width="20" 
+                                                height="20"
+                                                alt="<?= CFS()->get('alt_img1'); ?>"
+                                                loading="lazy"
+                                            >
+                                        </a>
+                                    <?php
+                                    }
+                                    ?>
+                                    <?php
+                                    if ($row['team_instagram']['url']) {
+                                    ?>
+                                        <a href="<?= $row['team_instagram']['url']; ?>">
+                                            <img 
+                                                src="<?= $row['icon2']; ?>"
+                                                width="20" 
+                                                height="20"
+                                                alt="<?= CFS()->get('alt_img2'); ?>"
+                                                loading="lazy"
+                                            >
+                                        </a>
+                                    <?php
+                                    }
+                                    ?>
+                                    <?php
+                                    if ($row['team_vk']['url']) {
+                                    ?>
+                                        <a href="<?= $row['team_vk']['url'] ?>">
+                                            <img 
+                                                src="<?= $row['icon3']; ?>"
+                                                width="20" 
+                                                height="20"
+                                                alt="<?= CFS()->get('alt_img3'); ?>"
+                                                loading="lazy"
+                                            >
+                                        </a>
+                                    <?php
+                                    }
+                                    ?>
+                                    <?php
+                                    if ($row['team_facebook']['url']) {
+                                    ?>
+                                        <a href="<?= $row['team_facebook']['url']; ?>">
+                                            <img 
+                                                src="<?= $row['icon4']; ?>"
+                                                width="20" 
+                                                height="20"
+                                                alt="<?= CFS()->get('alt_img4'); ?>"
+                                                loading="lazy"
+                                            >
+                                        </a>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
                             </div>
-                        <?php
-                        }
-                        ?>
-                    </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                        </div>
+                    <?php
+                    }
+                    ?>
                 </div>
-            </ul>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
         </div>
     </section>
     <section id="services" class="services">
@@ -105,7 +133,13 @@
                 ?>
                     <li class="card-services">
                         <div class="card-services__img">
-                            <img src="<?= $row['services_card_image']; ?>" alt="<?= $row['alt_img']; ?>" width="64" height="54">
+                            <img 
+                                src="<?= $row['services_card_image']; ?>"
+                                width="64" 
+                                height="54"
+                                alt="<?= $row['alt_img']; ?>"                                
+                                loading="lazy"
+                            >
                         </div>
                         <div class="card-services__content">
                             <h4 class="card-services__title"><?= $row['services_card_title']; ?></h4>
@@ -124,13 +158,26 @@
             <p class="section-subtitle"><?= CFS()->get('contact_us_slogan'); ?></p>
             <div class="contact-cards">
                 <div class="contact-card">
-                    <img src="<?php bloginfo('template_url') ?>/assets/images/phone.svg" alt="phone icon" class="contact-card__icon" width="14" height="21">
+                    <img 
+                        src="<?php bloginfo('template_url') ?>/assets/images/phone.svg"                         
+                        class="contact-card__icon" 
+                        width="14" 
+                        height="21"
+                        alt="phone icon"
+                        loading="lazy"
+                    >
                     <div class="contact-card__text">
                         <a href="tel:<?= CFS()->get('contact_us_phone'); ?>"><?= CFS()->get('contact_us_phone'); ?></a>
                     </div>
                 </div>
                 <div class="contact-card">
-                    <img src="<?php bloginfo('template_url') ?>/assets/images/pin.svg" alt="pin icon" class="contact-card__icon" width="16" height="21">
+                    <img 
+                        src="<?php bloginfo('template_url') ?>/assets/images/pin.svg"                          
+                        width="16" 
+                        height="21"
+                        loading="lazy"
+                        alt="pin icon" class="contact-card__icon"
+                    >
                     <div class="contact-card__text">
                         <?php
                         if (CFS()->get('contact_us_address')['url']) {
@@ -146,7 +193,13 @@
                     </div>
                 </div>
                 <div class="contact-card">
-                    <img src="<?php bloginfo('template_url') ?>/assets/images/mail.svg" alt="mail icon" class="contact-card__icon contact-card__icon_last" width="19" height="14">
+                    <img 
+                        src="<?php bloginfo('template_url') ?>/assets/images/mail.svg"                          
+                        width="19" 
+                        height="14"
+                        alt="mail icon" class="contact-card__icon contact-card__icon_last"
+                        loading="lazy"
+                    >
                     <div class="contact-card__text">
                         <a href="mailto:<?= CFS()->get('contact_us_email'); ?>"><?= CFS()->get('contact_us_email'); ?></a>
                     </div>
